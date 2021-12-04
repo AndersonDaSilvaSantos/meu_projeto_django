@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="card-body">
+        <h4>AUTORES</h4>
+        <button class=""btn btn-success>Adicionar</button>
+        <hr>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Data de Nascimento</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Autor 01</td>
+                    <td>autor01@hotmail.com</td>
+                    <td>01/01/1990</td>
+                    <td>
+                        <button class=""btn btn-warning>Editar</button>
+                        <button class=""btn btn-danger>Excluir</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Autor 02</td>
+                    <td>autor02@hotmail.com</td>
+                    <td>01/01/1991</td>
+                     <td>
+                        <button class=""btn btn-warning>Editar</button>
+                        <button class=""btn btn-danger>Excluir</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Autor 03</td>
+                    <td>autor03@hotmail.com</td>
+                    <td>01/01/1992</td>
+                     <td>
+                        <button class=""btn btn-warning>Editar</button>
+                        <button class=""btn btn-danger>Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}
