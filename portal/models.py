@@ -15,8 +15,8 @@ class Formato(models.Model):
     nome = models.CharField(max_length=255)
 
 class Livro(models.Model):
-    título = models.CharField(max_length=255)
-    subtítulo = models.CharField(max_length=255, blank=True, null=True)
+    titulo = models.CharField(max_length=255)
+    subtitulo = models.CharField(max_length=255, blank=True, null=True)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
     editora = models.ForeignKey(Editora, on_delete=models.CASCADE)
     formato = models.ForeignKey(Formato, on_delete=models.CASCADE)
