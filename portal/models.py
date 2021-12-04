@@ -2,7 +2,7 @@
 from django.db import models
 
 class Autor(models.Model):
-    nome: models.CharField(max_length=255)
+    nome = models.CharField(max_length=255)
     data_nascimento = models.DateField()
     email = models.EmailField()
 
@@ -21,6 +21,6 @@ class Livro(models.Model):
     editora = models.ForeignKey(Editora, on_delete=models.CASCADE)
     formato = models.ForeignKey(Formato, on_delete=models.CASCADE)
     data_lancamento = models.DateField()
-    isbn = models.Charfield(max_length=255)
+    isbn = models.CharField(max_length=255)
     numero_paginas = models.PositiveIntegerField()
 
