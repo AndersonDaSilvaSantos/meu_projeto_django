@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
+from portal.forms import AutorForm
 from portal.models import Autor
 
 
@@ -16,6 +17,20 @@ def autor(request):
         'autores': autores
     }
     return render(request, 'portal/autor.html', context)
+
+def autor_add(request):
+    form = AutorForm(request.POST or None)
+
+    if request.POST:
+        if form.is_valid():
+            form.save()
+            return redirect('autor')
+
+    context = {
+        'form': form
+    }
+
+    return render(request,'portal/autor_add.html', context)
 
 def editora(request):
     return render(request, 'portal/editora.html')
