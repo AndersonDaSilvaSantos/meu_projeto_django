@@ -48,7 +48,11 @@ def autor_edit(request, autor_pk):
 
     return render(request,'portal/autor_edit.html', context)
 
+def autor_delete(request, autor_pk):
+    autor = Autor.objects.get(pk=autor_pk)
+    autor.delete()
 
+    return redirect('autor')
 
 def editora(request):
     return render(request, 'portal/editora.html')
