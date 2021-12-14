@@ -5,10 +5,10 @@ from portal.models import Autor
 
 
 def home(request):
-    return render(request, 'templates/portal/home.html')
+    return render(request, 'portal/home.html')
 
 def dashboard(request):
-    return render(request, 'templates/portal/dashbord.html')
+    return render(request, 'portal/dashbord.html')
 
 def autor(request):
     autores = Autor.objects.all()
@@ -16,7 +16,7 @@ def autor(request):
     context = {
         'autores': autores
     }
-    return render(request, 'templates/portal/autor.html', context)
+    return render(request, 'portal/autor.html', context)
 
 def autor_add(request):
     form = AutorForm(request.POST or None)
@@ -30,7 +30,7 @@ def autor_add(request):
         'form': form
     }
 
-    return render(request,'templates/portal/autor_add.html', context)
+    return render(request,'portal/autor_add.html', context)
 
 def autor_edit(request, autor_pk):
     autor = Autor.objects.get(pk=autor_pk)
@@ -46,7 +46,7 @@ def autor_edit(request, autor_pk):
         'form': form
     }
 
-    return render(request,'templates/portal/autor_edit.html', context)
+    return render(request,'portal/autor_edit.html', context)
 
 def autor_delete(request, autor_pk):
     autor = Autor.objects.get(pk=autor_pk)
@@ -55,10 +55,10 @@ def autor_delete(request, autor_pk):
     return redirect('autor')
 
 def editora(request):
-    return render(request, 'templates/portal/editora.html')
+    return render(request, 'portal/editora.html')
 
 def formato(request):
-    return render(request, 'templates/portal/formato.html')
+    return render(request, 'portal/formato.html')
 
 def livro(request):
-    return render(request, 'templates/portal/livro.html')
+    return render(request, 'portal/livro.html')
